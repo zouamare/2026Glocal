@@ -13,7 +13,7 @@ async function fileToGenerativePart(file) {
       resolve({
         inlineData: {
           data: reader.result.split(',')[1],
-          mimeType: file.type
+          mimeType: file.type || 'image/jpeg'
         }
       });
     };
@@ -45,7 +45,7 @@ export default function App() {
 
     try {
       // 3. Gemini API 호출 준비 (멀티모달에 최적화된 flash 모델 사용)
-      const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
       const imagePart = await fileToGenerativePart(file);
       
       // 프롬프트 엔지니어링: 화면에 뿌리기 좋게 JSON 형식으로 답변을 요구합니다.

@@ -50,7 +50,7 @@ export async function fetchWeather(region: string) {
 // 🤖 2. 날씨 정보와 사용자 정보를 취합해 Gemini에게 패션 추천을 요청하는 함수
 export async function getOutfitRecommendation(region: string, gender: string, weatherInfo: string): Promise<OutfitRecommendation> {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
 
     const prompt = `
       너는 날씨와 패션에 아주 민감한 전문 스타일리스트야. 

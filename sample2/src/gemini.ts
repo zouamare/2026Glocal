@@ -29,7 +29,7 @@ async function fileToGenerativePart(file: File) {
 
 export async function analyzeFood(text: string, file: File | null): Promise<NutritionResult> {
   try {
-    const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
 
     const prompt = `
       너는 학교 급식을 전문으로 분석하는 AI 영양사야. 
